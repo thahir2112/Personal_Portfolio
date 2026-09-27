@@ -23,6 +23,8 @@ export default function Contact() {
   const [copiedPhone, setCopiedPhone] = useState(false);
   const [resumeStatus, setResumeStatus] = useState<string | null>(null);
 
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${portfolioData.email}`;
+
   const handleCopy = (text: string, type: "email" | "phone") => {
     navigator.clipboard.writeText(text);
     if (type === "email") {
@@ -101,7 +103,9 @@ export default function Contact() {
           <div className="flex flex-wrap items-center justify-center gap-4">
             <MagneticButton strength={0.3}>
               <a
-                href={`mailto:${portfolioData.email}`}
+                href={gmailUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-full text-xs font-mono uppercase tracking-widest font-bold text-black bg-mustard hover:bg-mustard-light transition-all duration-300 shadow-[0_0_30px_rgba(245,197,24,0.35)] hover:shadow-[0_0_40px_rgba(245,197,24,0.6)]"
               >
                 <Mail className="w-4 h-4" />
@@ -142,17 +146,34 @@ export default function Contact() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto pt-6">
           {/* Email Card */}
           <Reveal delay={0.25}>
-            <div className="p-6 rounded-2xl bg-[#121212] border border-white/10 space-y-3 relative group hover:border-mustard/40 transition-colors">
+            <div
+              onClick={() => window.open(gmailUrl, "_blank", "noopener,noreferrer")}
+              className="p-6 rounded-2xl bg-[#121212] border border-white/10 space-y-3 relative group hover:border-mustard/40 transition-colors cursor-pointer"
+            >
               <div className="flex items-center justify-between">
-                <div className="w-9 h-9 rounded-lg bg-mustard/10 flex items-center justify-center text-mustard">
+                <div className="w-9 h-9 rounded-lg bg-mustard/10 flex items-center justify-center text-mustard group-hover:bg-mustard group-hover:text-black transition-colors">
                   <Mail className="w-4 h-4" />
                 </div>
                 <button
-                  onClick={() => handleCopy(portfolioData.email, "email")}
-                  className="p-1.5 rounded bg-white/5 hover:bg-white/10 text-white/60 hover:text-white transition-colors"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleCopy(portfolioData.email, "email");
+                  }}
+                  className="p-1.5 px-2 rounded-md bg-white/5 hover:bg-white/10 text-white/60 hover:text-white transition-colors flex items-center gap-1.5 text-xs font-mono"
                   aria-label="Copy email address"
+                  title="Copy email to clipboard"
                 >
-                  {copiedEmail ? <Check className="w-3.5 h-3.5 text-mustard" /> : <Copy className="w-3.5 h-3.5" />}
+                  {copiedEmail ? (
+                    <>
+                      <Check className="w-3.5 h-3.5 text-mustard" />
+                      <span className="text-mustard text-[10px]">Copied!</span>
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="w-3.5 h-3.5" />
+                      <span className="text-[10px] text-white/40 group-hover:text-white/70">Copy</span>
+                    </>
+                  )}
                 </button>
               </div>
 
@@ -161,10 +182,14 @@ export default function Contact() {
                   DIRECT EMAIL
                 </div>
                 <a
-                  href={`mailto:${portfolioData.email}`}
-                  className="text-sm font-semibold text-white group-hover:text-mustard transition-colors break-all"
+                  href={gmailUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="text-sm font-semibold text-white group-hover:text-mustard transition-colors break-all inline-flex items-center gap-1.5"
                 >
-                  {portfolioData.email}
+                  <span>{portfolioData.email}</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-mustard" />
                 </a>
               </div>
             </div>

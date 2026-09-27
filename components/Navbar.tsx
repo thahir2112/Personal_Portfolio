@@ -189,9 +189,14 @@ export default function Navbar() {
                 <ArrowUpRight className="w-4 h-4" />
               </a>
 
-              <div className="text-center text-xs font-mono text-white/40">
+              <a
+                href={`https://mail.google.com/mail/?view=cm&fs=1&to=${portfolioData.email}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-center text-xs font-mono text-white/50 hover:text-mustard transition-colors"
+              >
                 {portfolioData.email}
-              </div>
+              </a>
             </div>
           </motion.div>
         )}
