@@ -67,20 +67,16 @@ export default function Navbar() {
           <a
             href="#hero"
             onClick={(e) => handleNavClick(e, "#hero")}
-            className="group flex items-center gap-2 focus-visible:outline-none"
+            className="group flex flex-col justify-center focus-visible:outline-none"
             aria-label="Mohamed Thahir S Portfolio Home"
           >
-            <div className="w-9 h-9 rounded-lg border border-white/15 bg-white/5 flex items-center justify-center font-mono font-bold text-sm tracking-wider text-white group-hover:border-mustard group-hover:text-mustard transition-all duration-300">
-              {portfolioData.monogram}
-            </div>
-            <div className="hidden sm:flex flex-col">
-              <span className="font-bold text-xs tracking-widest uppercase text-white/90 group-hover:text-mustard transition-colors">
-                {portfolioData.displayName}
-              </span>
-              <span className="text-[10px] font-mono text-white/40 tracking-wider">
-                CSE // DEV
-              </span>
-            </div>
+            <span className="font-bold text-sm sm:text-base tracking-wide text-white group-hover:text-mustard transition-colors leading-tight">
+              Mohamed Thahir S
+            </span>
+            <span className="text-[10px] sm:text-[11px] font-mono font-medium text-white/50 tracking-widest uppercase group-hover:text-mustard/90 transition-colors flex items-center gap-1.5 pt-0.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-mustard" />
+              CSE
+            </span>
           </a>
 
           {/* Desktop Navigation */}
