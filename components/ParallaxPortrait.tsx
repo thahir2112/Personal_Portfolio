@@ -63,31 +63,16 @@ export default function ParallaxPortrait({
         transition={{ type: "spring", stiffness: 120, damping: 18, mass: 0.1 }}
         className="relative w-full max-w-[280px] sm:max-w-[330px] md:max-w-[360px] lg:max-w-[380px] aspect-[4/5] rounded-2xl border border-white/10 bg-gradient-to-b from-[#1C1A14]/80 via-[#121212]/90 to-[#0A0A0A] p-2 sm:p-3 shadow-2xl backdrop-blur-md overflow-hidden"
       >
-        {/* Editorial Frame Accents */}
-        <div className="absolute top-3 left-3 text-[10px] uppercase font-mono tracking-widest text-mustard/80 z-20 flex items-center gap-1.5">
-          <span className="w-1.5 h-1.5 rounded-full bg-mustard animate-pulse" />
-          <span>MTS // PORTRAIT</span>
-        </div>
-
-        <div className="absolute bottom-3 right-3 text-[10px] uppercase font-mono tracking-widest text-white/40 z-20">
-          COIMBATORE // IND
-        </div>
-
         {/* Inner Image Container */}
-        <div className="relative w-full h-full rounded-xl overflow-hidden bg-gradient-to-b from-[#22201A] to-[#0D0D0D] flex items-center justify-center">
+        <div className="relative w-full h-full rounded-xl overflow-hidden bg-[#121212] flex items-center justify-center">
           {!imageError ? (
-            /* 
-              TODO: To insert your own portrait photo:
-              1. Add your image at /public/images/thahir-portrait.png
-              2. It will automatically replace this silhouette.
-            */
             <Image
               src={imageSrc}
               alt={alt}
               fill
               priority
               sizes="(max-width: 768px) 100vw, 440px"
-              className="object-cover object-top filter contrast-[1.04] brightness-[0.98] hover:scale-[1.03] transition-all duration-700"
+              className="object-cover object-top hover:scale-[1.02] transition-transform duration-500"
               onError={() => setImageError(true)}
             />
           ) : (
@@ -121,9 +106,7 @@ export default function ParallaxPortrait({
             </div>
           )}
 
-          {/* Warm Bottom Vignette for seamless text blending */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-80 pointer-events-none" />
-          <div className="absolute inset-0 border border-mustard/10 rounded-xl pointer-events-none" />
+          <div className="absolute inset-0 border border-white/10 rounded-xl pointer-events-none" />
         </div>
       </motion.div>
     </div>
