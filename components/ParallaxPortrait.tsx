@@ -61,7 +61,7 @@ export default function ParallaxPortrait({
             : { rotateX: tilt.rotateX, rotateY: tilt.rotateY }
         }
         transition={{ type: "spring", stiffness: 120, damping: 18, mass: 0.1 }}
-        className="relative w-full max-w-[340px] sm:max-w-[400px] md:max-w-[440px] aspect-[4/5] rounded-2xl border border-white/10 bg-gradient-to-b from-[#1C1A14]/80 via-[#121212]/90 to-[#0A0A0A] p-2 sm:p-3 shadow-2xl backdrop-blur-md overflow-hidden"
+        className="relative w-full max-w-[280px] sm:max-w-[330px] md:max-w-[360px] lg:max-w-[380px] aspect-[4/5] rounded-2xl border border-white/10 bg-gradient-to-b from-[#1C1A14]/80 via-[#121212]/90 to-[#0A0A0A] p-2 sm:p-3 shadow-2xl backdrop-blur-md overflow-hidden"
       >
         {/* Editorial Frame Accents */}
         <div className="absolute top-3 left-3 text-[10px] uppercase font-mono tracking-widest text-mustard/80 z-20 flex items-center gap-1.5">

@@ -8,7 +8,7 @@ import Reveal from "./Reveal";
 
 export default function About() {
   return (
-    <section id="about" className="relative py-28 md:py-36 px-4 sm:px-8 md:px-12 bg-[#0A0A0A] overflow-hidden">
+    <section id="about" className="relative pt-6 pb-20 md:pt-8 md:pb-28 px-4 sm:px-8 md:px-12 bg-[#0A0A0A] overflow-hidden">
       {/* Background Decorative Glow */}
       <div
         aria-hidden="true"
@@ -19,7 +19,7 @@ export default function About() {
         className="absolute bottom-10 right-0 w-[30rem] h-[30rem] rounded-full bg-[#1A1508] blur-[150px] pointer-events-none"
       />
 
-      <div className="max-w-7xl mx-auto space-y-20">
+      <div className="max-w-7xl mx-auto space-y-8 sm:space-y-12">
         {/* Section Header */}
         <div className="space-y-4">
           <Reveal>
@@ -43,6 +43,27 @@ export default function About() {
             </Reveal>
           </div>
         </div>
+
+        {/* Identity & Career Objective Banner */}
+        <Reveal delay={0.15}>
+          <div className="relative p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-[#121212]/95 via-[#16140E]/80 to-[#121212]/95 border border-mustard/30 backdrop-blur-xl shadow-xl space-y-3">
+            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-white/10 pb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-mustard/30 bg-mustard/10 text-mustard text-xs font-mono uppercase tracking-widest">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Career Objective // Identity & Philosophy</span>
+              </div>
+              <div className="text-xs font-mono text-white/50">
+                <span>{portfolioData.name.toUpperCase()}</span>
+                <span className="mx-2">—</span>
+                <span className="text-mustard">{portfolioData.location.toUpperCase()}</span>
+              </div>
+            </div>
+
+            <p className="text-base sm:text-xl md:text-2xl font-bold text-white/95 tracking-tight leading-relaxed italic">
+              “{portfolioData.careerObjective}”
+            </p>
+          </div>
+        </Reveal>
 
         {/* Animated Editorial Divider Motif */}
         <div className="relative w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent">

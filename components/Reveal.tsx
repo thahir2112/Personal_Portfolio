@@ -60,7 +60,7 @@ export default function Reveal({
         y: 0,
         filter: "blur(0px)",
       }}
-      viewport={{ once, margin: "-80px" }}
+      viewport={{ once, margin: "-20px" }}
       transition={{
         duration,
         delay,
