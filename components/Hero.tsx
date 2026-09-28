@@ -103,17 +103,16 @@ export default function Hero() {
           {/* Left Column: Headlines, CTAs, Skills */}
           <div className="lg:col-span-7 flex flex-col justify-center text-left space-y-5">
             {/* Name & Role Header */}
-            <div className="space-y-1.5">
-              <div className="inline-flex items-center gap-2.5">
-                <span className="h-px w-8 bg-mustard" />
-                <span className="text-sm sm:text-base md:text-lg font-bold font-mono tracking-widest uppercase text-mustard">
+            <div className="space-y-1 sm:space-y-1.5">
+              <div>
+                <span className="text-xl sm:text-2xl md:text-3xl font-extrabold font-mono tracking-wider uppercase text-mustard">
                   {portfolioData.name}
                 </span>
               </div>
 
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-mono uppercase tracking-widest text-white/70 font-medium">
-                  {portfolioData.tagline}
+              <div>
+                <span className="text-xs sm:text-sm font-mono uppercase tracking-widest text-white/80 font-medium">
+                  Full Stack Developer
                 </span>
               </div>
             </div>

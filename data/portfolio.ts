@@ -94,7 +94,7 @@ export const portfolioData: PortfolioData = {
   name: "Mohamed Thahir S",
   displayName: "THAHIR",
   monogram: "MTS",
-  tagline: "Full Stack Developer | Data Analytics Enthusiast | Cloud Security Learner",
+  tagline: "Full Stack Developer",
   role: "Full Stack Developer & Data Analytics Enthusiast",
   headline: "Full Stack, Built Differently.",
   heroBio:
